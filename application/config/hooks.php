@@ -9,8 +9,12 @@
 |	http://codeigniter.com/user_guide/general/hooks.html
 |
 */
-
-
-
+$hook['post_controller_constructor'][] = array(
+                                'class'    => 'ProfilerEnabler',
+                                'function' => 'EnableProfiler',
+                                'filename' => 'hooks.classes.php',
+                                'filepath' => 'hooks',
+                                'params'   => array()
+                                );
 /* End of file hooks.php */
 /* Location: ./application/config/hooks.php */
