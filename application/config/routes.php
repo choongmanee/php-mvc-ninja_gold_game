@@ -39,7 +39,6 @@
 */
 
 $route['default_controller'] = "ninjagames";
-// $route['ninjagames/process'] = "ninjagames";
 $route['404_override'] = '';
 
 

@@ -1,3 +1,4 @@
+<?php date_default_timezone_set('America/Los_Angeles');?> 
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 //change class name to reflect the controller page name
@@ -31,6 +32,7 @@ class Ninjagames extends CI_Controller {
 		$this->session->set_userdata('roll',$roll);
 		$this->session->set_userdata('gold',$amount);
 		$this->session->set_userdata('building',$building);
+		$this->session->set_userdata('message',$this->activities());
 		redirect("/");
 	}
 
@@ -55,8 +57,14 @@ class Ninjagames extends CI_Controller {
 	}
 
 	private function activities() {
-		$this->session->sess_destroy();
-		redirect("/");
+		$oldmessage = $this->session->userdata('message'); 
+		if ($this->session->userdata('roll')>=0) {
+			$message = $oldmessage."You earned ".$this->session->userdata('roll')." from ".$this->session->userdata('building')."! (".date('Y-m-d h:m').")</br>";
+		}
+		else {
+			$message = $oldmessage."You lost ".$this->session->userdata('roll')." from ".$this->session->userdata('building')."! (".date('Y-m-d h:m').")</br>";
+		}
+		return $message;
 	}
 }
 

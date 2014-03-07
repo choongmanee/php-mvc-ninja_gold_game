@@ -23,7 +23,7 @@
 	<div class="divform">
 		<h2>Farm</h2>
 		<h5>(earns 10-20 golds)</h5>
-		<form action="/ninjagames/process" method="post">
+		<form action="/ninjagames/process" method="post" class="game">
 			<input type="hidden" name="building" value="farm">
 			<input type="submit" value="Find Gold!" class="btn">
 		</form>
@@ -31,7 +31,7 @@
 	<div class="divform">
 		<h2>Cave</h2>
 		<h5>(earns 5-10 golds)</h5>
-		<form action="/ninjagames/process" method="post">
+		<form action="/ninjagames/process" method="post" class="game">
 			<input type="hidden" name="building" value="cave">
 			<input type="submit" value="Find Gold!" class="btn">
 		</form>
@@ -39,7 +39,7 @@
 	<div class="divform">
 		<h2>House</h2>
 		<h5>(earns 2-5 golds)</h5>
-		<form action="/ninjagames/process" method="post">
+		<form action="/ninjagames/process" method="post" class="game">
 			<input type="hidden" name="building" value="house">
 			<input type="submit" value="Find Gold!" class="btn">
 		</form>
@@ -47,7 +47,7 @@
 	<div class="divform">
 		<h2>Casino</h2>
 		<h5>(earn or lose 50 golds)</h5>
-		<form action="/ninjagames/process" method="post">
+		<form action="/ninjagames/process" method="post" class="game">
 			<input type="hidden" name="building" value="casino">
 			<input type="submit" value="Find Gold!" class="btn">
 		</form>
@@ -55,12 +55,11 @@
 	<div id="activities">
 		<h5>Activities: </h5>
 		<div id="activitylog">
-			<?php
-			?>
+			<?php echo $this->session->userdata('message')."<br>";?>
 		</div>
 	</div>
 	<form action="/ninjagames/reset">
-		<input type="submit" value="reset">
+		<input type="submit" value="reset" class="btn btn-info">
 	</form>
 </div>
 </body>

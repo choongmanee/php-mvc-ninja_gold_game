@@ -26,4 +26,5 @@
 	width: 95%;
 	height: 150px;
 	margin: auto;
+	overflow: auto;
 }
